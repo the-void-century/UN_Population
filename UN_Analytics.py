@@ -7,10 +7,10 @@ ASEAN_COUNTRIES=["Brunei Darussalam","Cambodia","Indonesia","Malaysia","Myanmar"
 SAARC_COUNTRIES=["Afganistan","Bangladesh","Bhutan","India","Maldives","Nepal","Sri Lanka"]
 SAARC_COUNTRY_TO_POPULATION={}
 ASEAN_BY_YEAR={}
-colors=["forestgreen","darkorange","maroon","lightcoral","cyan","goldenrod","magenta","black","tomato"]
+colors=["forestgreen","darkorange","maroon","lightcoral","cyan","goldenrod","magenta","black","tomato","tan"]
 
 def calculate():
-    with open("data/pop.csv") as csv_file:
+    with open("data/pop.csv",encoding='utf-8') as csv_file:
         population_reader=csv.DictReader(csv_file)
         for population in population_reader:
             if population["Region"]=="India":
@@ -79,6 +79,7 @@ def asean_population_over_year():
     width=0.10
     k=-5
     dynamic_width=[i for i in range(9)]
+    color_count=0
     print(ASEAN_BY_YEAR)
     for countries in ASEAN_BY_YEAR:
         population=list(ASEAN_BY_YEAR[countries].values())
